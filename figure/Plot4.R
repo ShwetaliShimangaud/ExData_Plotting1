@@ -19,5 +19,5 @@ legend("topright",col=c("black","blue","red"),c("Sub metering 1","Sub metering 2
 
 plot(data1$DateTime,data1$Global_reactive_power,type = "l",ylab="Global Reactive Power",xlab="DateTime")
 
-dev.copy(png,"Plot4.png")
+dev.copy(png,"Plot4.png",width="480",height="480")
 dev.off()
