@@ -1,0 +1,12 @@
+temp<-tempfile()
+download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip",temp)
+data<-read.table(unz(temp,"household_power_consumption.txt"),header=TRUE,sep=";")
+unlink(temp)
+
+par(mfrow=c(1,1))
+data1<-subset(data,data$Date=="2/2/2007" | data$Date=="1/2/2007")
+data1$DateTime=paste(data1$Date," ",data1$Time)
+data1$DateTime=as.POSIXct(strptime(data1$DateTime,format="%d/%m/%Y %H:%M:%S","GMT"))
+plot(data1$DateTime,data1$Global_active_power,type = "l",ylab="Global Active Power (kilowatts)",xlab="DateTime")
+dev.copy(png,"Plot2.png")
+dev.off()
