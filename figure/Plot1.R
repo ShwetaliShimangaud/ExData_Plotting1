@@ -6,5 +6,5 @@ unlink(temp)
 
 par(mfrow=c(1,1))
 hist(as.numeric(data$Global_active_power),xlab = "Global Active Power (kilowatts)",ylab="Frequency",main="Global Active Power",col="red")
-dev.copy(png,"Plot1.png")
+dev.copy(png,"Plot1.png",width="480",height="480")
 dev.off()
