@@ -13,5 +13,5 @@ lines(data1$DateTime,data1$Sub_metering_2,type = "l",col="red")
 
 legend("topright",col=c("black","blue","red"),c("Sub metering 1","Sub metering 2","Sub metering 3"),lty=1)
 
-dev.copy(png,"Plot3.png")
+dev.copy(png,"Plot3.png",width="480",height="480")
 dev.off()
